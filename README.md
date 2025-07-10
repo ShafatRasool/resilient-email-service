@@ -66,15 +66,15 @@ node app.js
 Server will run on:
 📍 http://localhost:3000
 
-📤 API Endpoints
-POST /send-email
+###📤 API Endpoints
+###POST /send-email
 Request Body:
 ```json
  {
-"emailId": "unique_id_123", 
-"to": "recipient@example.com", 
-"subject": "Hello!",
-"body": "This is a test email."
+  "emailId": "unique_id_123", 
+  "to": "recipient@example.com", 
+  "subject": "Hello!",
+  "body": "This is a test email."
 } 
 ``` 
 
@@ -85,10 +85,10 @@ Responses:
 
 409 – Duplicate emailId
 
-GET /status
+###GET /status
 Returns all email statuses processed so far.
 
-GET /status/:emailId
+###GET /status/:emailId
 Check the status of a specific email by ID.
 
 Sample Response:
@@ -136,12 +136,14 @@ Instance type: Free (512 MB)
 - **LinkedIn:** [linkedin.com/in/shafatrasool](https://www.linkedin.com/in/shafatrasool)
 
 
-###📌 Notes
-This service is in-memory only (no DB used).
+### 📌 Notes
+
+This service is in-memory only (no DB used).  
 It’s a demo-ready and extendable base.
 
-###✅ Future Improvements
-Use Redis queue or BullMQ for production-scale job handling
-Add email logs or audit trail in a database
-Enable retry delays with a job scheduler
-Use real providers like SendGrid, Mailgun, etc.
+### ✅ Future Improvements
+
+- Use Redis queue or BullMQ for production-scale job handling  
+- Add email logs or audit trail in a database  
+- Enable retry delays with a job scheduler  
+- Use real providers like SendGrid, Mailgun, etc.
