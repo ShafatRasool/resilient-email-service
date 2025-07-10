@@ -66,8 +66,8 @@ node app.js
 Server will run on:
 📍 http://localhost:3000
 
-###📤 API Endpoints
-###POST /send-email
+### 📤 API Endpoints
+#### POST /send-email
 Request Body:
 ```json
  {
@@ -85,11 +85,11 @@ Responses:
 
 409 – Duplicate emailId
 
-###GET /status
-Returns all email statuses processed so far.
+### GET /status
+#### Returns all email statuses processed so far.
 
-###GET /status/:emailId
-Check the status of a specific email by ID.
+### GET /status/:emailId
+#### Check the status of a specific email by ID.
 
 Sample Response:
 ```json
