@@ -70,9 +70,12 @@ Server will run on:
 POST /send-email
 Request Body:
 ```json
- { "emailId": "unique_id_123", 
+ {
+"emailId": "unique_id_123", 
 "to": "recipient@example.com", 
-"subject": "Hello!", "body": "This is a test email." } 
+"subject": "Hello!",
+"body": "This is a test email."
+} 
 ``` 
 
 Responses:
@@ -125,21 +128,20 @@ Start command: node app.js
 
 Instance type: Free (512 MB)
 
-👨‍💻 Author
-Shafat Rasool
-📧 shafatrasooldev@gmail.com
-🌐 GitHub – @ShafatRasool
+## 👨‍💻 Author
 
-📌 Notes
+- **Name:** Shafat Rasool  
+- **Email:** [shafatrasooldev@gmail.com](mailto:shafatrasooldev@gmail.com)  
+- **GitHub:** [@ShafatRasool](https://github.com/ShafatRasool)  
+- **LinkedIn:** [linkedin.com/in/shafatrasool](https://www.linkedin.com/in/shafatrasool)
+
+
+###📌 Notes
 This service is in-memory only (no DB used).
-
 It’s a demo-ready and extendable base.
 
-✅ Future Improvements
+###✅ Future Improvements
 Use Redis queue or BullMQ for production-scale job handling
-
 Add email logs or audit trail in a database
-
 Enable retry delays with a job scheduler
-
 Use real providers like SendGrid, Mailgun, etc.
