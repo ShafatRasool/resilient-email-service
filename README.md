@@ -141,6 +141,61 @@ Instance type: Free (512 MB)
 This service is in-memory only (no DB used).  
 It’s a demo-ready and extendable base.
 
+
+### 🧪 Testing
+#### If you'd like to test individual modules like the RateLimiter, follow the steps below.
+
+### ▶️ Sample Setup with Jest
+#### Install Jest
+
+```bash
+npm install --save-dev jest
+```
+### Add to package.json
+
+```json
+"scripts": {
+  "test": "jest"
+}
+```
+
+### Create a Test File
+#### Example: __tests__/RateLimiter.test.js
+```
+const RateLimiter = require('../utils/RateLimiter');
+
+describe('RateLimiter', () => {
+  it('allows requests under the limit', () => {
+    const limiter = new RateLimiter(5, 60000);
+    expect(limiter.isRateLimited()).toBe(false);
+  });
+
+  it('blocks requests over the limit', () => {
+    const limiter = new RateLimiter(2, 1000);
+    limiter.isRateLimited();
+    limiter.isRateLimited();
+    expect(limiter.isRateLimited()).toBe(true);
+  });
+});
+```
+### Run the Tests
+
+```bash
+npm test
+```
+
+### 🔍 What Else Can Be Tested
+| Module            | What to Test                                                                 |
+|-------------------|------------------------------------------------------------------------------|
+| Circuit Breaker   | Opens after 3 failures, skips provider when open, resets after cooldown     |
+| Providers         | Simulate success/failure using mocked Math.random(), test retry/fallback    |
+| EmailService      | Verifies retries, fallbacks, idempotency, and proper status updates         |
+| EmailQueue        | Ensures FIFO execution, respects rate limit per message                     |
+
+
+> ℹ️ In this project, email provider failure is simulated using Math.random(). For test reliability, mock Math.random to control outcomes in unit tests.
+
+
 ### ✅ Future Improvements
 
 - Use Redis queue or BullMQ for production-scale job handling  
